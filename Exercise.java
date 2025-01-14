@@ -61,6 +61,13 @@ class Subject {
     }
 }
 
+/** 
+* Name: Session.java
+ * Date: 14 January 2025
+ * Author: Davin
+ * Modified: 14 January 2025
+ * Description: Lab 05
+/* */
 public class Session {
     private static final int duration;
     private static final Session Instances;
