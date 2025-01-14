@@ -90,6 +90,14 @@ public class Session {
         return Instances;
     }
 
+    public void setDuration(int startTime, int endTime) throws IllegalArgumentException{
+        if(startTime >= endTime){
+            throw new IllegalArgumentException("Start time cannot be bigger than End Time");
+        }
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
     public void display(){
         System.out.println("-----------------------------");
         System.out.println("         SESSION");
@@ -109,6 +117,12 @@ public class Exercise {
         subject.displayCourseDetails();
 
         Session session = Session.getInstances();
-        session.display();
+        try{
+            session.setDuration(7, 11);
+            System.out.println("Session set from " + session.getStartTime() + " to " + session.getEndTime());
+            session.display();
+        } catch (IllegalArgumentException error){
+            System.out.println("Error: " + error.getMessage());
+        }
     }
 }
